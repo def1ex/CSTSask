@@ -14,17 +14,16 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: transparent; /* Change this to transparent */
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    backdrop-filter: blur(10px);
 }
 
 .header img {
-    width: 100px;
+    width: 300px;
 }
 
 .header nav {
@@ -48,17 +47,25 @@ body {
     text-decoration-color: #333;
 }
 
+
 .content {
     margin-top: 100px; /* Adjust based on header height */
 }
 
 .content-item {
     height: 100vh;
+    width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
     z-index: 0;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.content-item.active {
+    opacity: 1;
 }
 
 .content-item::before {
@@ -70,6 +77,4 @@ body {
     height: 100%;
     background: inherit;
     z-index: -1;
-    transform: translateY(-50px);
-    filter: blur(10px);
-}
+    transform: translateY(-50px);}
