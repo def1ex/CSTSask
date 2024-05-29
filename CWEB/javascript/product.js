@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const products = {
         "1": {
             "name": "Product 1",
-            "price": "$40",
+            "price": "$1999",
             "description": "One line description of Product 1.",
             "images": [
                 "img/products/product-1/img1.jpg",
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         "2": {
             "name": "Product 2",
-            "price": "$50",
+            "price": "$989",
             "description": "One line description of Product 2.",
             "images": [
                 "img/products/product-2/img1.jpg",
@@ -24,8 +24,31 @@ document.addEventListener("DOMContentLoaded", function() {
             ],
             "sizes": ["S", "M", "L"],
             "extraDetails": "Additional information about Product 2."
-        }
-        // Add more products as needed
+        },
+        "3": {
+            "name": "Product 3",
+            "price": "$1849",
+            "description": "One line description of Product 1.",
+            "images": [
+                "img/products/product-3/img1.jpg",
+                "img/products/product-3/img2.jpg",
+                "img/products/product-3/img3.jpg"
+            ],
+            "sizes": ["One"],
+            "extraDetails": "Additional information about Product 3."
+        },
+        "4": {
+            "name": "Product 4",
+            "price": "$2549",
+            "description": "One line description of Product 1.",
+            "images": [
+                "img/products/product-4/img1.jpg",
+                "img/products/product-4/img2.jpg",
+                "img/products/product-4/img3.jpg"
+            ],
+            "sizes": ["XS", "S", "M", "L"],
+            "extraDetails": "Additional information about Product 1."
+        },
     };
 
     // Fetch product ID from URL
