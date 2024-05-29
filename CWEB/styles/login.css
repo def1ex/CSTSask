@@ -7,7 +7,7 @@
 
 body, html {
     height: 100%;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Keystone', 'Keystone-Italic';
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,44 +34,45 @@ body, html {
     position: relative;
     width: 100%;
     max-width: 400px;
-    padding: 20px;
+    padding: 30px; /* Increased padding for more space */
     background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Rounded corners for aesthetics */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .login-form h1 {
-    margin-bottom: 20px;
-    font-size: 2em;
+    margin-bottom: 30px; /* Increased margin for the header */
+    font-size: 2.5em; /* Larger font size for emphasis */
     text-align: center;
     color: #333;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Increased margin between form groups */
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px; /* Increased margin below labels */
     color: #555;
 }
 
 .form-group input {
     width: 100%;
-    padding: 10px;
+    padding: 15px; /* Increased padding inside inputs */
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px; /* Slightly rounded input corners */
+    font-size: 1.2em; /* Larger font size for inputs */
 }
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 15px; /* Increased padding for button */
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #333;
     color: white;
-    font-size: 1em;
+    font-size: 1.2em;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -83,10 +84,19 @@ button:hover {
 /* Responsive design */
 @media (max-width: 768px) {
     .login-container {
-        padding: 15px;
+        padding: 20px; /* Adjusted padding for smaller screens */
     }
 
     .login-form h1 {
-        font-size: 1.5em;
+        font-size: 2em; /* Adjusted font size for smaller screens */
+    }
+
+    .form-group input {
+        padding: 12px; /* Adjusted padding for smaller screens */
+    }
+
+    button {
+        padding: 12px; /* Adjusted padding for smaller screens */
+        font-size: 1em; /* Adjusted font size for smaller screens */
     }
 }
