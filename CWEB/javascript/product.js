@@ -1,29 +1,71 @@
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('products.json') // Adjust the path as needed
-        .then(response => response.json())
-        .then(data => {
-            // Populate product details
-            document.getElementById('productName').textContent = data.product.name;
-            document.getElementById('productPrice').textContent = data.product.price;
-            document.getElementById('productDescription').textContent = data.product.description;
+document.addEventListener("DOMContentLoaded", function() {
+    // Product data
+    const products = {
+        "1": {
+            "name": "Product 1",
+            "price": "$40",
+            "description": "One line description of Product 1.",
+            "images": [
+                "img/products/product-1/img1.jpg",
+                "img/products/product-1/img2.jpg",
+                "img/products/product-1/img3.jpg"
+            ],
+            "sizes": ["S", "M", "L", "XL"],
+            "extraDetails": "Additional information about Product 1."
+        },
+        "2": {
+            "name": "Product 2",
+            "price": "$50",
+            "description": "One line description of Product 2.",
+            "images": [
+                "img/products/product-2/img1.jpg",
+                "img/products/product-2/img2.jpg",
+                "img/products/product-2/img3.jpg"
+            ],
+            "sizes": ["S", "M", "L"],
+            "extraDetails": "Additional information about Product 2."
+        }
+        // Add more products as needed
+    };
 
-            // Populate product sizes
-            const sizeOptions = document.getElementById('productSizes');
-            data.product.sizes.forEach(size => {
-                const button = document.createElement('button');
-                button.className = 'btn btn-outline-dark';
-                button.textContent = size;
-                sizeOptions.appendChild(button);
-            });
+    // Fetch product ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('productId');
 
-            // Populate carousel images
-            const carouselInner = document.getElementById('carouselInner');
-            data.product.images.forEach((image, index) => {
-                const carouselItem = document.createElement('div');
-                carouselItem.className = index === 0 ? 'carousel-item active' : 'carousel-item';
-                carouselItem.innerHTML = `<img src="${image}" class="d-block w-100" alt="Product Image ${index + 1}">`;
-                carouselInner.appendChild(carouselItem);
-            });
-        })
-        .catch(error => console.error('Error fetching data:', error));
-}); 
+    // Load product data based on productId
+    if (productId && products[productId]) {
+        const product = products[productId];
+        document.getElementById("productName").textContent = product.name;
+        document.getElementById("productPrice").textContent = product.price;
+        document.getElementById("productDescription").textContent = product.description;
+        document.getElementById("extraDetails").textContent = product.extraDetails;
+
+        // Load carousel images
+        const carouselInner = document.getElementById("carouselInner");
+        carouselInner.innerHTML = '';
+        product.images.forEach((image, index) => {
+            const div = document.createElement("div");
+            div.classList.add("carousel-item");
+            if (index === 0) {
+                div.classList.add("active");
+            }
+            const img = document.createElement("img");
+            img.src = image;
+            img.classList.add("d-block", "w-100");
+            div.appendChild(img);
+            carouselInner.appendChild(div);
+        });
+
+        // Load size options
+        const sizeOptions = document.getElementById("sizeOptions");
+        sizeOptions.innerHTML = '';
+        product.sizes.forEach(size => {
+            const button = document.createElement("button");
+            button.classList.add("btn", "btn-outline-dark");
+            button.textContent = size;
+            sizeOptions.appendChild(button);
+        });
+    } else {
+        console.error("Product not found");
+    }
+});
