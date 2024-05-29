@@ -74,6 +74,8 @@ body {
 .product-images {
     position: relative;
     overflow: hidden;
+    width: 100%;
+    padding-top: 75%; /* Maintain aspect ratio (4:3) */
 }
 
 .product-image, .product-image-back {
@@ -103,6 +105,7 @@ body {
 .product-card:hover .product-image-back {
     opacity: 1; /* Show the back image on hover */
 }
+
 .product-info {
     padding: 20px;
     text-align: center;
