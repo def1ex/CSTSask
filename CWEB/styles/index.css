@@ -78,3 +78,37 @@ body {
     background: inherit;
     z-index: -1;
     transform: translateY(-50px);}
+    .footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+    
+    .footer-container img {
+        width: 200px;
+    }
+    
+    .footer-content ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+    }
+    
+    .footer-content ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 24px;
+    }
+    
+    .footer-content ul li a:hover {
+        text-decoration: underline;
+    }

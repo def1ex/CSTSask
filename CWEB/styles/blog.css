@@ -52,25 +52,32 @@ body {
 .footer {
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .footer-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-container img {
+    width: 200px;
 }
 
 .footer-content ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 .footer-content ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 24px;
 }
 
 .footer-content ul li a:hover {
