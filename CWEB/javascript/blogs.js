@@ -1,4 +1,3 @@
-// Define an array of blog post objects
 const blogPosts = [
     {
         title: "A Symphony of Style: Unveiling the Latest Fashion Trends",
@@ -23,11 +22,8 @@ const blogPosts = [
 ];
 
 
-// Function to display blog posts on the webpage
 function displayBlogPosts() {
     const blogContent = document.querySelector('.blog-content');
-
-    // Loop through the blogPosts array and create HTML elements for each blog post
     blogPosts.forEach((post, index) => {
         const blogPostDiv = document.createElement('div');
         blogPostDiv.classList.add('blog-post');
@@ -45,6 +41,4 @@ function displayBlogPosts() {
         blogContent.appendChild(blogPostDiv);
     });
 }
-
-// Call the displayBlogPosts function when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', displayBlogPosts);

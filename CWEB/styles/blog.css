@@ -1,4 +1,3 @@
-/* Reset styles */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +15,7 @@ body {
     top: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 5px 20px; /* Reduced padding further */
+    padding: 5px 20px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,11 +24,11 @@ body {
 }
 
 .header img {
-    width: 120px; /* Adjusted width */
+    width: 120px; 
 }
 
 .header nav a {
-    padding: 5px 10px; /* Reduced padding */
+    padding: 5px 10px; 
     margin: 0 10px;
     font-size: 16px;
     font-weight: bold;

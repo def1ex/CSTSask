@@ -49,19 +49,15 @@ document.addEventListener("DOMContentLoaded", function() {
             "extraDetails": "This blazer is tailored to perfection, offering a refined look with its vibrant color and impeccable fit."
         },
     };
-    // Fetch product ID from URL
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('productId');
 
-    // Load product data based on productId
     if (productId && products[productId]) {
         const product = products[productId];
         document.getElementById("productName").textContent = product.name;
         document.getElementById("productPrice").textContent = product.price;
         document.getElementById("productDescription").textContent = product.description;
         document.getElementById("extraDetails").textContent = product.extraDetails;
-
-        // Load carousel images
         const carouselInner = document.getElementById("carouselInner");
         carouselInner.innerHTML = '';
         product.images.forEach((image, index) => {
@@ -76,8 +72,6 @@ document.addEventListener("DOMContentLoaded", function() {
             div.appendChild(img);
             carouselInner.appendChild(div);
         });
-
-        // Load size options
         const sizeOptions = document.getElementById("sizeOptions");
         sizeOptions.innerHTML = '';
         product.sizes.forEach(size => {

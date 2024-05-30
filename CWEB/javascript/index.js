@@ -26,5 +26,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setImageBackgrounds();
   window.addEventListener('scroll', onScroll);
-  onScroll();  // Initial call to set the correct active item on load
+  onScroll(); 
 });
