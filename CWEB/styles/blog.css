@@ -90,18 +90,17 @@ body {
 }
 .blog-container {
     display: flex;
-    justify-content: space-between;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .blog-index-box {
-    width: 200px;
+    width: 200px; /* Set a fixed width */
     position: sticky;
     background-color: rgba(255, 255, 255, 0.8);
     top: 120px;
-    height: calc(100vh - 120px);
+    max-height: calc(100vh - 120px); /* Limit maximum height */
     overflow-y: auto;
     padding: 20px;
     border-right: 1px solid #ccc;
@@ -112,6 +111,7 @@ body {
     flex: 1;
     padding: 20px;
     overflow-y: auto;
+    margin-left: 220px; /* Adjust margin to push content to the right of index box */
 }
 
 .blog-post {
@@ -129,7 +129,6 @@ body {
 .blog-post p {
     line-height: 1.6;
 }
-/* Style for video container */
 .video-container {
     position: fixed;
     top: 0;
@@ -149,6 +148,85 @@ video {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
 
+    .header img {
+        margin-bottom: 10px;
+    }
+    .blog-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px; 
+    }
 
+    .blog-post {
+        text-align: left; 
+        background-color: rgba(255, 255, 255, 0.8); 
+        padding: 20px; 
+        border-radius: 10px;
+        margin-bottom: 20px; 
+    }
+
+    .blog-post h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .blog-post p {
+        line-height: 1.6;
+    }
+    .blog-index-box {
+        display: none; /* Hide index box on smaller screens */
+    }
+
+    .header-nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .header-nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin-bottom: 5px;
+        transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .footer-content {
+        display: none;
+    }
+}
    
