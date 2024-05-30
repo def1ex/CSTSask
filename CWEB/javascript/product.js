@@ -1,56 +1,54 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Product data
     const products = {
         "1": {
-            "name": "Product 1",
+            "name": "Opulent Satin Gown",
             "price": "$1999",
-            "description": "One line description of Product 1.",
+            "description": "Elegant and timeless satin dress, perfect for special occasions.",
             "images": [
                 "img/products/product-1/img1.jpg",
                 "img/products/product-1/img2.jpg",
                 "img/products/product-1/img3.jpg"
             ],
             "sizes": ["S", "M", "L", "XL"],
-            "extraDetails": "Additional information about Product 1."
+            "extraDetails": "Crafted from luxurious satin fabric, this dress features a flattering silhouette and exquisite detailing."
         },
         "2": {
-            "name": "Product 2",
+            "name": "Platinum Grey Hoodie",
             "price": "$989",
-            "description": "One line description of Product 2.",
+            "description": "Comfortable and stylish grey hoodie for casual wear.",
             "images": [
                 "img/products/product-2/img1.jpg",
                 "img/products/product-2/img2.jpg",
                 "img/products/product-2/img3.jpg"
             ],
             "sizes": ["S", "M", "L"],
-            "extraDetails": "Additional information about Product 2."
+            "extraDetails": "Made from premium materials, this hoodie offers both warmth and style, making it a must-have for any wardrobe."
         },
         "3": {
-            "name": "Product 3",
+            "name": "Eclipse Sunglasses",
             "price": "$1849",
-            "description": "One line description of Product 1.",
+            "description": "Luxurious sunglasses with a modern design.",
             "images": [
                 "img/products/product-3/img1.jpg",
                 "img/products/product-3/img2.jpg",
                 "img/products/product-3/img3.jpg"
             ],
             "sizes": ["One"],
-            "extraDetails": "Additional information about Product 3."
+            "extraDetails": "Featuring high-quality lenses and a sleek frame, these sunglasses are the perfect accessory for any outfit."
         },
         "4": {
-            "name": "Product 4",
+            "name": "Rose Quartz Blazer",
             "price": "$2549",
-            "description": "One line description of Product 1.",
+            "description": "Chic and sophisticated pink blazer, ideal for both professional and casual settings.",
             "images": [
                 "img/products/product-4/img1.jpg",
                 "img/products/product-4/img2.jpg",
                 "img/products/product-4/img3.jpg"
             ],
             "sizes": ["XS", "S", "M", "L"],
-            "extraDetails": "Additional information about Product 1."
+            "extraDetails": "This blazer is tailored to perfection, offering a refined look with its vibrant color and impeccable fit."
         },
     };
-
     // Fetch product ID from URL
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('productId');
