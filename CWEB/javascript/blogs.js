@@ -21,7 +21,6 @@ const blogPosts = [
     }
 ];
 
-
 function displayBlogPosts() {
     const blogContent = document.querySelector('.blog-content');
     blogPosts.forEach((post, index) => {
@@ -41,12 +40,15 @@ function displayBlogPosts() {
         blogContent.appendChild(blogPostDiv);
     });
 }
-document.addEventListener('DOMContentLoaded', displayBlogPosts);
 
-const menuToggle = document.querySelector('.menu-toggle');
-const headerNav = document.querySelector('.header-nav');
+document.addEventListener('DOMContentLoaded', () => {
+    displayBlogPosts();
 
-menuToggle.addEventListener('click', () => {
-    headerNav.classList.toggle('active');
-    menuToggle.classList.toggle('active');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const headerNav = document.querySelector('.header-nav');
+
+    menuToggle.addEventListener('click', () => {
+        headerNav.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
 });
