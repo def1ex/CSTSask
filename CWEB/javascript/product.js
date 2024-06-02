@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
             "extraDetails": "This blazer is tailored to perfection, offering a refined look with its vibrant color and impeccable fit."
         },
     };
+
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('productId');
 
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("productPrice").textContent = product.price;
         document.getElementById("productDescription").textContent = product.description;
         document.getElementById("extraDetails").textContent = product.extraDetails;
+        
         const carouselInner = document.getElementById("carouselInner");
         carouselInner.innerHTML = '';
         product.images.forEach((image, index) => {
@@ -72,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
             div.appendChild(img);
             carouselInner.appendChild(div);
         });
+        
         const sizeOptions = document.getElementById("sizeOptions");
         sizeOptions.innerHTML = '';
         product.sizes.forEach(size => {
@@ -79,16 +82,21 @@ document.addEventListener("DOMContentLoaded", function() {
             button.classList.add("btn", "btn-outline-dark");
             button.textContent = size;
             sizeOptions.appendChild(button);
+            
+            button.addEventListener('click', function() {
+                // Remove the selected class from all size buttons
+                document.querySelectorAll('.size-options .btn').forEach(btn => btn.classList.remove('selected'));
+                // Add the selected class to the clicked button
+                button.classList.add('selected');
+            });
         });
     } else {
         console.error("Product not found");
     }
-});
 
-const menuToggle = document.querySelector('.menu-toggle');
-const headerNav = document.querySelector('.header-nav');
-
-menuToggle.addEventListener('click', () => {
-    headerNav.classList.toggle('active');
-    menuToggle.classList.toggle('active');
+    const buyNowButton = document.querySelector('.buy-now');
+    buyNowButton.addEventListener('click', function() {
+        const paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+        paymentModal.show();
+    });
 });

@@ -16,3 +16,9 @@ menuToggle.addEventListener('click', () => {
     headerNav.classList.toggle('active');
     menuToggle.classList.toggle('active');
 });
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting the default way
+    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    successModal.show();
+});
