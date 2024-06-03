@@ -88,6 +88,14 @@ body {
     text-decoration: underline;
 }
 
+.footer-easter-egg {
+    display: none; /* Initially hidden */
+}
+
+.footer-container:hover .footer-easter-egg {
+    display: block; /* Display on hover */
+}
+
 .blog-container {
     display: flex;
     border-radius: 10px;
@@ -194,41 +202,42 @@ video {
         display: none;
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        width: 100;
         text-align: center;
         margin-top: 10px;
-    }
-    .footer a{
-        display: none;
-    }
-    .header-nav.active {
-        display: flex;
-    }
+        }
 
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-    }
+        .footer a{
+            display: none;
+        }
 
-    .menu-toggle span {
-        display: block;
-        width: 30px;
-        height: 3px;
-        background-color: black;
-        margin: 6px 0;
-        transition: transform 0.3s, opacity 0.3s;
-    }
+        .header-nav.active {
+            display: flex;
+        }
 
-    .menu-toggle.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
+        .menu-toggle {
+            display: block;
+            cursor: pointer;
+        }
 
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
+        .menu-toggle span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: black;
+            margin: 6px 0;
+            transition: transform 0.3s, opacity 0.3s;
+        }
 
-    .menu-toggle.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-}
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
 
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    }
